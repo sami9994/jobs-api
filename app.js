@@ -31,6 +31,9 @@ app.use(xss())
 
 app.use('/api/v1/auth', authRouter)
 app.use('/api/v1/jobs', authenticateUser, jobRouter)
+app.get('/', (req, res) => {
+  res.send('<h1>welcome to jobs api</h1>')
+})
 app.use(notFoundMiddleware)
 app.use(errorHandlerMiddleware)
 
